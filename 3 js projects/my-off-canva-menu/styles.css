@@ -1,0 +1,362 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Roboto mono", 'Courier New', Courier, monospace;
+    background-color: #f1f1f1;
+    overflow-x: hidden;
+}
+
+li {
+    list-style: none;
+    font-family: "Roboto mono", 'Courier New', Courier, monospace;
+}
+
+nav {
+    background-color: #030304;
+    color: #9f9f9f;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.bar {
+    width: 30px;
+    height: 3px;
+    background-color: #9f9f9f;
+    margin: 5px 0;
+    cursor: pointer;
+}
+
+.off-canva-menu {
+    position: absolute;
+    top: 0;
+    right: -50%; /* Move the menu off the screen by default */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    background-color: black;
+    color: white;
+    width: 30%;
+    transition: right 0.3s ease; /* Add a transition for smooth animation */
+    z-index: 1;
+}
+
+.toggle-on-canva-menu {
+    cursor: pointer;
+}
+
+.active {
+    right: 0; /* Bring the menu into view when active */
+}
+
+.off-canva-menu-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: auto;
+}
+
+.off-canva-menu-container li {
+    font-size: 30px;
+    width: 100%;
+    padding: 10px 62px;
+    margin-right: 50%;
+    text-decoration: none;
+    color: #cccccc;
+    list-style: none;
+    cursor: pointer;
+    border: solid 1px rgb(156, 156, 156);
+    display: flex;
+}
+
+.off-canva-menu-container li:hover {
+    color: rgb(11, 11, 11);
+    background-color: #f1f1f1;
+    transition: 0.3s;
+}
+
+.toggle-off-canva-menu {
+    position: absolute;
+    top: 10%;
+    right: 20%;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.line-x,
+.line-y {
+    width: 30px;
+    height: 3px;
+    background-color: #333;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.line-x {
+    transform: rotate(45deg);
+}
+
+.line-y {
+    transform: rotate(-45deg);
+}
+
+
+
+
+.closed-menu:hover .bar {
+    transition: background-color 0.3s ease-in-out;
+}
+
+.closed-menu:hover .bar:nth-child(1) {
+    background-color: #cccccc; /* Change color to your preferred hover color */
+}
+
+.closed-menu:hover .bar:nth-child(2) {
+    background-color: #9d9d9d; /* Change color to your preferred hover color */
+}
+
+.closed-menu:hover .bar:nth-child(3) {
+    background-color: #cccccc; /* Change color to your preferred hover color */
+}
+
+.closed-menu {
+    transition: transform 0.3s ease-in-out;
+}
+
+.closed-menu:hover {
+    transform: rotate(130deg); /* Rotate 360 degrees on hover */
+}
+
+.closed-menu:hover .bar:nth-child(1) {
+    transform: translateX(2px); /* Translate the first bar 2px down */
+}
+
+.closed-menu:hover .bar:nth-child(2) {
+    transform: translateX(-2px); /* Translate the second bar 2px up */
+}
+
+.closed-menu:hover .bar:nth-child(3) {
+    transform: translateX(2px); /* Translate the third bar 2px down */
+}
+
+.line-x, .line-y {
+    transition: background-color 0.3s ease-in-out;
+}
+
+
+.toggle-off-canva-menu:hover .line-x {
+    background-color: #cccccc;
+}
+
+.toggle-off-canva-menu:hover .line-y {
+    background-color: #cccccc;
+}
+
+
+/* NAVIGATION */
+.nav-container img {
+    max-width: 200px;
+}
+
+.nav-container img {
+    transition: filter 0.3s;
+    transition: transform 0.3s;
+}
+
+/* Define the filter effect when hovered */
+.nav-container img:hover {
+    filter: brightness(200%);
+    cursor: pointer;
+    transform: translateX(5px);
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0 auto;
+}
+
+/* HERO SECTION */
+.hero-section {
+    background-color: #171717;
+    color: #9f9f9f;
+    position: relative;
+}
+
+.hero-info,
+.hero-belief,
+.hero-works {
+    font-size: 1rem;
+    padding: 5px 8px;
+    color: #9f9f9f;
+    background-color: #191919;
+    border-radius: 5px;
+    position: absolute;
+    border: 1px solid #9f9f9f;
+    top: 5%;
+    left: 22%;
+    transition: all 0.3s ease-in-out;
+}
+
+.hero-belief {
+    left: 34%;
+}
+
+.hero-works {
+    left: 28%;
+}
+
+.hero-info:hover {
+    background-color: #9f9f9f;
+    color: #191919;
+    cursor: pointer;
+}
+
+.hero-works:hover {
+    background-color: #9f9f9f;
+    color: #191919;
+    cursor: pointer;
+}
+
+.hero-belief:hover {
+    background-color: #9f9f9f;
+    color: #191919;
+    cursor: pointer;
+}
+
+/* SUBHERO */
+.sub-hero-section {
+    background-color: #191919;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Stack elements vertically in a column */
+    overflow: hidden; /* Prevent overflow of the section */
+}
+
+.sub-hero-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%; /* Ensure content doesn't exceed the container's width */
+    height: 100%;
+    text-align: center; /* Center align text content */
+}
+
+.sub-hero-container button {
+    margin-top: 10px; /* Add spacing between the button and other elements */
+    padding: 10px 20px;
+    border: 1px solid #9f9f9f;
+    border-radius: 5px;
+    background-color: #191919;
+    color: #9f9f9f;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-family: "Coder's Crux", monospace;
+}
+
+.sub-hero-container button:hover {
+    background-color: #9f9f9f;
+    color: #191919;
+}
+
+.sub-hero-tv {
+    opacity: 0.5;
+    transition: all 0.3s ease-in-out;
+}
+
+.sub-hero-container img {
+    transition: all 0.3s ease-in-out;
+    margin-top: 0px; /* Add spacing between images */
+}
+
+.sub-hero-container .sub-hero-tv {
+    width: 250px;
+    height: auto;
+    transition: all 0.3s ease-in-out;
+}
+
+.sub-hero-container .sub-hero-light {
+    width: 98px;
+    height: auto;
+    transition: all 0.3s ease-in-out;
+    opacity: 0.5;
+}
+
+.sub-hero-container .light {
+    width: 300px;
+    height: auto;
+    transition: all 0.3s ease-in-out;
+    opacity: 0.5;
+}
+
+
+
+.sub-hero-container img:hover {
+    opacity: 1;
+}
+
+/* TEST SECTION */
+/* Add your existing CSS styles here */
+
+/* Define the initial styles */
+.sub-hero-container img {
+    transition: opacity 0.3s ease-in-out, filter 0.3s ease-in-out;
+    filter: grayscale(100%) brightness(50%); /* Apply grayscale and brightness filter */
+}
+
+/* Define the styles for the active state */
+.sub-hero-container img.active {
+    opacity: 1; /* Change opacity when active */
+    filter: grayscale(0%) brightness(100%); /* Apply grayscale and brightness filter */
+}
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

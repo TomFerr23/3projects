@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Off-Canva Menu</title>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <img src="img/logo data overload.png" alt="">
+            <div class="closed-menu toggle-on-canva-menu active">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+    
+            <div class="off-canva-menu open-menu">
+                <div class="toggle-off-canva-menu">
+                    <div class="line-x"></div>
+                    <div class="line-y"></div>
+                </div>
+                <div class="off-canva-menu-container">
+                    <ul>
+                        <li>Home</li>
+                        <li>Services</li>
+                        <li>About</li>
+                        <li>Contacts</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-section">
+        <h2 class="hero-info">info</h2>
+        <h2 class="hero-works">works</h2>
+        <h2 class="hero-belief">our belief</h2>
+        <h1>Your Vision, Our Craftsmanship</h1>
+    </section>
+
+
+
+    <section class="sub-hero-section">
+        <div class="sub-hero-container">
+            <img class="sub-hero-light sub-hero-light-animation" src="img/lamp.png" alt="">
+            <img class="light" src="img/light.png" alt="">
+            <img class="sub-hero-tv" src="img/TV.png" alt="">
+            <button id="toggleButton">Light On</button>
+        </div>
+    </section>
+    
+    
+
+    
+
+    <script>
+    // Get the button and the images
+const toggleButton = document.getElementById('toggleButton');
+const images = document.querySelectorAll('.sub-hero-container img');
+
+// Add a click event listener to the button
+toggleButton.addEventListener('click', function () {
+    // Loop through the images and toggle their styles
+    images.forEach(image => {
+        image.classList.toggle('active');
+    });
+});
+
+
+
+    </script>
+
+
+
+
+    
+      <script src="arrow-toggle.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
